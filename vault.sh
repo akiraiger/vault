@@ -44,11 +44,17 @@ get_secret() {
   echo ${secret} | pbcopy
 }
 
+list_secret() {
+  cd ~/.vault
+  find . -type f ! -name 'key.txt'
+}
+
 if [ ! -d ${vault} ] ; then init_vault ; fi
 # if [ ! command -v openssl > /dev/null ] ; then printf "OpenSSL is not available" ; fi
 
 if [ ${action} == "help" ] ; then print_help ;
 elif [ ${action} == "store" ] ; then store_secret "$2" "$3" ;
 elif [ ${action} == "get" ] ; then get_secret "$2" ;
+elif [ ${action} == "list" ] ; then list_secret ;
 elif [ $# -eq 0 ] ; then no_arguments ;
 else unknown_action ; fi
