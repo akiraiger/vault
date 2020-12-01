@@ -4,12 +4,13 @@ Vault is a shell script that you can use for managing secrets such as passwords,
 ## Usage
 - Store secret with key: `$ ./vault.sh store <key> '<secret>'`
 - Copy secret to clipboard: `$ ./vault.sh get <key>`
+- Delete secret by its key: `$ ./vault.sh delete <key>`
 - List all secret `$ ./vault.sh list`
 
 ## Todo
 - [ ] Use GPG
-- [v] List all secret key
-- [ ] Delete secret by key
+- [x] List all secret key
+- [x] Delete secret by key
 - [ ] Delete all secret
 
 ## License
